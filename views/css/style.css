@@ -28,7 +28,7 @@ form {
 #pizzaSize {
   font-weight: 800;
 }
-
+/* added will-change to create a new layer*/
 .mover {
   will-change: transform;
   transform: translateZ(0);
