@@ -35,7 +35,12 @@ form {
   z-index: -1;
 }
 
+/*#randomPizza {
+  will-change:transform;
+}*/
+
 .randomPizzaContainer {
+  will-change:transform;
   float: left;
   display: flex;
 }
