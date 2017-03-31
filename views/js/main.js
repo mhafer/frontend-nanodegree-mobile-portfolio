@@ -441,21 +441,20 @@ var resizePizzas = function(size) {
       }
     }
 
-   var newSize = sizeSwitcher(size);
-   var dx = (newSize - oldSize) * windowWidth;
+    var newSize = sizeSwitcher(size);
+    var dx = (newSize - oldSize) * windowWidth;
 
     return dx;
   }
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-   
-    var changingPizzas = document.querySelectorAll(".randomPizzaContainer");
-    var dx = determineDx(document.querySelector(".randomPizzaContainer"), size);
-    var newwidth = (document.querySelector(".randomPizzaContainer").offsetWidth + dx);
-
-    for (var i = 0; i < changingPizzas.length; i++) {
-      changingPizzas[i].style.width = newWidth + "%";
+    // since all pizza elements have the same size, query once is enough.
+    var nodes = document.getElementsByClassName("randomPizzaContainer");
+    var dx = determineDx(nodes[0], size);
+    var newwidth = (nodes[0].offsetWidth + dx) + 'px';
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].style.width = newwidth;
     }
   }
 
@@ -503,7 +502,6 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
   var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
@@ -527,7 +525,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 30; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
@@ -537,5 +535,6 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-  updatePositions();
+
+  requestAnimationFrame(updatePositions);
 });
