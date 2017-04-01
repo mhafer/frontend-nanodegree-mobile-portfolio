@@ -10,7 +10,7 @@
 2. Resize and compress the images
 3. Moved script tag to the end of the body
 4. Base64 Encoded google fonts
-5. Minimized the CSS file and added it as inline CSS6. 
+5. Minimized the CSS file and added it as inline CSS. 
 6. Added a print.css file with media="print"
 7. Added async to js/perfmatters.min.js and minified it
 8. Minimized the HTML file
