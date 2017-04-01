@@ -26,13 +26,27 @@
   2.removed document.getElements from for loop
 6. re-wrote updatePositions()
   1.removed document.getElements from for loop
-  2.reduced loop to 30 elements
+  2.reduced loop to 24 elements
   3.added requestAnimationFrame() at the end
-7. Async added to js file
+7. Moved JS and CSS to bottom of the body
 8. media="screen" added toe CSS file	
 9. Minimized the HTML file
 
 You can view the project [here](https://mhafer.github.io/frontend-nanodegree-mobile-portfolio/)
+
+### To run the project locally:
+
+1. Download or clone this git repo to your computer
+2. Open Chrome (or any browser) and press Ctrl + o (an 'open' window appears)
+3. In that window, navigate to the root directory.
+4. Double click index.html to open in your browser
+
+Alernatively, if you have WAMP installed:
+
+1. Download or clone this git repo to your computer
+2. Copy or move the whole directory into your www folder on your wamp server
+3. Access by typing in the URL localhost/wwww/frontend-nanodegree-mobile-portfolio/index.html
+
 
 ### Customization with Bootstrap
 The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
